@@ -11,16 +11,25 @@
 </head>
 <body>
   <div id="app">
-    {{ msg }}
+    <span v-bind:title="message">
+      hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span>
   </div>
   
   <script>
     var app = new Vue({
       el: '#app',
       data:{
-        msg: 'Hello Vue!'
+        message: 'You loaded this page on' + new Date().toLocaleString()
       }
     })
+
+    // 1. message = "You loaded this page on9/25/2019, 9:38:35 AM"
+    // 2. v-bind:title="message" -> message が data.message として展開される
+    //   （展開される ⇒ JavaScriptのコードとして実行される）
+    // 3. v-bind:title ⇒ title
+
   </script>
 </body>
 </html>
