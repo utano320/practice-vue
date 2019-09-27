@@ -23,13 +23,9 @@
       <p>isVisibleがfalse</p>
     </div>
   
-    <!--
-      if (isVisible) {
-        // trueの場合の処理
-      } else {
-        // falseの場合の処理
-      }
-    -->
+    <ul>
+      <li v-for="item in listData">{{ item[0] }} : {{ item[1] }}</li>
+    </ul>
   </div>
   
   <script>
@@ -37,7 +33,12 @@
       el: '#app',
       data:{
         isVisible: true,
-        message: 'You loaded this page on' + new Date().toLocaleString()
+        message: 'You loaded this page on' + new Date().toLocaleString(),
+        listData: [
+          ["mitsuo", "1983/10/26"],
+          ["xxxx", "1983/01/01"],
+          ["daisuke", "1983/11/01"],
+        ]
       }
     })
 
