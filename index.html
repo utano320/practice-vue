@@ -19,7 +19,17 @@
     <div class="divA" v-if="isVisible">
       <p>isVisibleがtrue</p>
     </div>
-    
+    <div class="divB" v-else>
+      <p>isVisibleがfalse</p>
+    </div>
+  
+    <!--
+      if (isVisible) {
+        // trueの場合の処理
+      } else {
+        // falseの場合の処理
+      }
+    -->
   </div>
   
   <script>
