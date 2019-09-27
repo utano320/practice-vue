@@ -11,16 +11,22 @@
 </head>
 <body>
   <div id="app">
-    <span v-bind:title="message">
-      hover your mouse over me for a few seconds
-      to see my dynamically bound title!
+    <span :title="message">
+        hover your mouse over me for a few seconds
+        to see my dynamically bound title!
     </span>
+
+    <div class="divA" v-if="isVisible">
+      <p>isVisibleがtrue</p>
+    </div>
+    
   </div>
   
   <script>
     var app = new Vue({
       el: '#app',
       data:{
+        isVisible: true,
         message: 'You loaded this page on' + new Date().toLocaleString()
       }
     })
