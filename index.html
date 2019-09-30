@@ -28,6 +28,12 @@
     </ul>
 
     <button @click="countUp">実行 : {{ count }}</button>
+
+    <div>
+      <input type="text" v-model="name">
+      <p>{{ name }}</p>
+    </div>
+
   </div>
   
   <script>
@@ -41,7 +47,8 @@
           ["xxxx", "1983/01/01"],
           ["daisuke", "1983/11/01"],
         ],
-        count: 0
+        count: 0,
+        name: "名前を入力してください"
       },
       methods: {
         countUp: function () {
