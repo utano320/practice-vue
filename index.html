@@ -8,6 +8,14 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
   <title>Document</title>
+
+  <style>
+    .list-item {
+      font-weight: bold;
+      color: tomato;
+      font-size: 2rem;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -25,6 +33,14 @@
   
     <ul>
       <li v-for="item in listData">{{ item[0] }} : {{ item[1] }}</li>
+      <list-item></list-item>
+    </ul>
+
+    <ul>
+      <list-item></list-item>
+      <list-item></list-item>
+      <list-item></list-item>
+      <list-item></list-item>
     </ul>
 
     <button @click="countUp">実行 : {{ count }}</button>
@@ -37,6 +53,10 @@
   </div>
   
   <script>
+    Vue.component('list-item', {
+      template: '<li class="list-item">List Item</li>'
+    })
+
     var app = new Vue({
       el: '#app',
       data:{
