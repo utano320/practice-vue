@@ -33,7 +33,7 @@
   
     <ul>
       <li v-for="item in listData">{{ item[0] }} : {{ item[1] }}</li>
-      <list-item></list-item>
+      <list-item :item="'propsのitem'"></list-item>
     </ul>
 
     <ul>
@@ -54,7 +54,8 @@
   
   <script>
     Vue.component('list-item', {
-      template: '<li class="list-item">List Item</li>'
+      props: ['item'],
+      template: '<li class="list-item">List Item {{ item }}</li>'
     })
 
     var app = new Vue({
