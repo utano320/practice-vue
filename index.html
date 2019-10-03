@@ -42,6 +42,8 @@
       <p>{{ name }}</p>
     </div>
 
+    <div v-html="tag"></div>
+
   </div>
   
   <script>
@@ -61,7 +63,26 @@
           ["daisuke", "1983/11/01"],
         ],
         count: 0,
-        name: "名前を入力してください"
+        name: "名前を入力してください",
+        tag: '<b>太字</b>'
+      },
+      beforeCreate: function() {
+        console.log('beforeCreateのタイミングで実行')
+      },
+      created: function() {
+        console.log('createdのタイミングで実行')
+      },
+      beforeMount: function() {
+        console.log('beforeMountのタイミングで実行')
+      },
+      mounted: function() {
+        console.log('mountedのタイミングで実行')
+      },
+      beforeUpdate: function() {
+        console.log('beforeUpdateのタイミングで実行')
+      },
+      updated: function() {
+        console.log('updatedのタイミングで実行')
       },
       methods: {
         countUp: function () {
